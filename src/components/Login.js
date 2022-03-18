@@ -7,11 +7,44 @@ const Login = (props) => {
         <a href="/">
           <img src="./images/login-logo.svg" alt="" />
         </a>
+        <div>
+          <Join>Join now</Join>
+          <SignIn>Sign in</SignIn>
+        </div>
       </Nav>
     </Container>
   );
 };
 
+const SignIn = styled.a`
+  box-shadow: inset 0px 0px 0px 1px #0a66c2;
+  color: #0a66c2;
+  border-radius: 24px;
+  transition-duration: 167ms;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 40px;
+  padding: 10px 24px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  &: hover {
+    background-color: rgba(112, 181, 259, 0.15);
+    color: #0a66c2;
+    text-decoration: none;
+  }
+`;
+const Join = styled.a`
+  font-size: 16px;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.6);
+  margin-right: 12px;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: none;
+  }
+`
 // empty styling
 const Container = styled.div``;
 const Nav = styled.nav`
