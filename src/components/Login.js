@@ -12,9 +12,28 @@ const Login = (props) => {
           <SignIn>Sign in</SignIn>
         </div>
       </Nav>
+      <Section>
+        <Hero>
+          <h1>Welcome to your professional community</h1>
+          <img src = "./images/login-hero.svg" alt = "" />
+        </Hero>
+        <form>
+          <Google>
+            <img src = "./images/google.svg" alt = "" />
+            Sign in with Google
+          </Google>
+        </form>
+      </Section>
+
     </Container>
   );
 };
+
+
+// empty styling
+const Container = styled.div`
+  padding: 0px;
+`;
 
 const SignIn = styled.a`
   box-shadow: inset 0px 0px 0px 1px #0a66c2;
@@ -33,6 +52,7 @@ const SignIn = styled.a`
     text-decoration: none;
   }
 `;
+
 const Join = styled.a`
   font-size: 16px;
   padding: 10px 12px;
@@ -45,10 +65,27 @@ const Join = styled.a`
     text-decoration: none;
   }
 `
-// empty styling
-const Container = styled.div``;
+const Section = styled.section`
+  display: flex;
+  align-content: start;
+  min-height: 700px;
+  padding-bottom: 138px;
+  padding-top: 40px;
+  padding: 60px 0;
+  position: relative;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1377px;
+  align-items: center;
+  margin: auto;
+  @media (max-width: 768px) {
+    margin: auto;
+    min-height: 0px;
+  }
+`;
+
 const Nav = styled.nav`
-  max-width: 1128px;
+  max-width: 1377px;
   margin: auto;
   padding: 12px 0 16px;
   display: flex;
@@ -67,4 +104,45 @@ const Nav = styled.nav`
   }
 `;
 
+const Hero = styled.div`
+  width: 100%;
+  h1 {
+    padding-bottom: 0;
+    text-align: left;
+    width: 40%;
+    font-size: 56px;
+    color: rgba(180,0,0,1.0);
+    font-weight: 1;
+    @media (max-width: 768px) {
+      text-align: center;
+      font-size: 30px;
+      width: 100%;
+      line-height: 2;
+    }
+  }
+
+  img {
+    max-width: 800px;
+    max-height: 800px;
+    width: 700px;
+    height: 670px;
+    position: absolute;
+    right: -120px;
+    bottom: -10px;
+    
+    @media (max-width: 768) {
+      flex-wrap: wrap;
+      top: 10px;
+      width: initial;
+      position: initial;
+      height: initial;
+    }
+  }
+`;
+
+const Google = styled.button`
+  margin-top: 100px;
+  
+`;
 export default Login;
+
