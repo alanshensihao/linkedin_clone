@@ -53,9 +53,11 @@ const Header = (props) => {
 
                     <User>
                         <a>
-                            <img src="/images/user.svg" alt="" />
-                            <div>Me</div>        
-                            <img src="/images/down-icon.svg" alt=""/>
+                            <ul>
+                                <li><img src="/images/user.svg" alt="" /></li>
+                                <li><div>Me</div><img id="downArrow1" src="/images/down-icon.svg" alt=""/></li> 
+                            </ul>
+                            
                         </a>
                         <SignOut>
                             <a>
@@ -70,7 +72,7 @@ const Header = (props) => {
                             <div>
                                 Work
                             </div>
-                            <img src="/images/down-icon.svg" alt=""/>
+                            <img id="downArrow2" src="/images/down-icon.svg" alt=""/>
                         </a>
                     </Work>                                                           
                 </NavListWrap>
@@ -81,7 +83,7 @@ const Header = (props) => {
 }
 
 const Container = styled.div`
-    display: inline-flex;
+    display: flex;
     background-color: white;
     border-bottom: 1px-solid rgba(0, 0, 0, 0.08);
     left: 0;
@@ -214,23 +216,47 @@ const NavList = styled.li`
     }
 `;
 
+const SignOut = styled.div`
+    position: absolute;
+    top: 0px;
+    background: white;
+    border-radius: 0 0 5px 5px;
+    width: 100px;
+    padding-top: 25px;
+    height: 20px;
+    font-size: 16px;
+    transition-duration: 167ms;
+    align-items: center;
+    display: none;
+`;
+
 const User = styled(NavList)`
     align-items: center;
+    display: inline;
+
+    ul {
+        list-style-type: none;
+    }
 
     a > svg {
         width: 24px;
         border-radius: 50%;
     }
     
-    a > img {
+    img {
         width: 24px;
         height: 24px;
         border-radius: 50%;
+        justify-content: center;
+        display: inline-flex;  
     }
 
-    div {
-        display:absolute;
-        align-items: center;
+    &: hover {
+        ${SignOut} {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
     }
 
 `;
@@ -239,14 +265,7 @@ const Work = styled(User)`
     border-left: 1px solid rgba(0,0,0,0.08);
 `;
 
-const SignOut = styled.div`
-    position: absolute;
-    top: 0px;
-    background: white;
-    border-radius: 0 0 5px 5px;
-    width: 100px;
-    height: 20px;
-`;
+
 
 
 export default Header;
