@@ -32,6 +32,7 @@ const Login = (props) => {
 
 // empty styling
 const Container = styled.div`
+
   padding: 0px;
 `;
 

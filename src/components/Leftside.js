@@ -27,9 +27,30 @@ const Leftside = (props) => {
             <Item>
                 <span>
                     <img src = "./images/item-icon.svg" alt=""/>
+                    My items
                 </span>
+                
             </Item>
         </ArtCard>
+
+        <CommunityCard>
+            <a>
+                <span>Groups</span>
+            </a>
+            <a>
+                <span>
+                    Events
+                    <img src="/images/plus-icon.svg
+                    " alt=""/>
+                </span>
+            </a>
+            <a>
+                <span>Follow Hashtags</span>
+            </a>
+            <a>
+                <span>Dicover more</span>
+            </a>
+        </CommunityCard>
     </Container>;
 };
 
@@ -140,7 +161,57 @@ const Widget = styled.div`
 `;
 
 const Item = styled.a`
+    border-color: rgba(0, 0, 0, 0.0)
+    text-align: left;
+    padding: 12px;
+    font-size: 12px;
+    display: block;
+    span {
+        display: flex;
+        align-items: center;
+        color: rgba(0, 0, 0, 1);
+        svg {
+            color: rgba(0, 0, 0, 0.6);
+        }
+    }
 
+    &:hover {
+        background-color: rgba(0,0,0,0.08);
+    }
+`;
+
+const CommunityCard = styled(ArtCard)`
+    padding: 8px 0 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+
+    a {
+        color: black;
+        padding: 4px 12px 4px 12px;
+        font-size: 12px;
+
+        &: hover {
+            color: #0a66c2;
+        }
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &:last-child {
+            color: rgba(0, 0, 0, 0.6);
+            text-decoration: none;
+
+            border-top: 1px solid #d6cec2;
+            padding: 12px;
+            &:hover{
+                background-color: rgba(0, 0, 0, 0.08);
+            }
+        }
+    }
 `;
 
 export default Leftside;
